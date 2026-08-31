@@ -1,0 +1,38 @@
+<UserControl x:Class="TestPms.Views.LockScreenView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#1F2A38">
+    <Grid>
+        <Border Width="380" Height="330" Background="White" CornerRadius="6"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Margin="32" VerticalAlignment="Center">
+                <TextBlock Text="TestPms" FontSize="28" FontWeight="Bold" Foreground="#1F2A38"
+                           HorizontalAlignment="Center" Margin="0,0,0,4"/>
+                <TextBlock Text="Pharmacy Management System" FontSize="12" Foreground="#6B7280"
+                           HorizontalAlignment="Center" Margin="0,0,0,24"/>
+
+                <TextBlock Text="Email" FontSize="12" Foreground="#374151" Margin="0,0,0,4"/>
+                <TextBox x:Name="EmailBox"
+                         AutomationProperties.AutomationId="uxEmailField"
+                         Height="32" Padding="6,4" Margin="0,0,0,12"/>
+
+                <TextBlock Text="Password" FontSize="12" Foreground="#374151" Margin="0,0,0,4"/>
+                <PasswordBox x:Name="PasswordBox"
+                             AutomationProperties.AutomationId="uxPasswordField"
+                             Height="32" Padding="6,4" Margin="0,0,0,8"/>
+
+                <TextBlock x:Name="ErrorText"
+                           AutomationProperties.AutomationId="uxLoginError"
+                           Text="Invalid email or password."
+                           Foreground="#DC2626" FontSize="12"
+                           Visibility="Collapsed" Margin="0,0,0,8"/>
+
+                <Button x:Name="LoginButton"
+                        AutomationProperties.AutomationId="uxLoginButton"
+                        Content="Log In" Height="34" Margin="0,8,0,0"
+                        Background="#2563EB" Foreground="White" BorderThickness="0"
+                        Click="LoginButton_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

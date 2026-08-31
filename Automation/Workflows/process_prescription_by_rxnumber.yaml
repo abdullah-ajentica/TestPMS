@@ -1,0 +1,49 @@
+workflow: process_prescription_by_rxnumber
+
+steps:
+  - assert: screen.mainForm
+
+  - scan_table:
+      target: mainForm.prescriptionGrid
+      search_column: Rx Number
+      match: vars.rxNumber
+      scroll_strategy: page_down_until_found
+      on_found:
+        - select_row: vars.targetRow
+      on_not_found: fail
+
+  - click: mainForm.processButton
+
+  - wait_for_element:
+      target: screen.processForm
+      timeout_ms: 5000
+      on_timeout:
+        action: fail
+
+  - read_table:
+      target: processForm.processGrid
+      columns:
+        - Rx Number
+        - Patient Name
+        - Drug Name
+      into: vars.processRows
+
+  - click: processForm.continueButton
+
+  - wait_for_disappear:
+      target: screen.processForm
+      timeout_ms: 5000
+      on_timeout:
+        action: fail
+
+  - wait_for_element:
+      target: mainForm.successToast
+      timeout_ms: 5000
+      on_timeout:
+        action: fail
+
+  - read:
+      target: mainForm.successToastMessage
+      into: vars.toastMessage
+
+  - log: vars.toastMessage

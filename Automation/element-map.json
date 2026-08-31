@@ -1,0 +1,234 @@
+{
+  "screens": {
+    "screen.lockForm": {
+      "type": "Window",
+      "locator": {
+        "automationId": "LockForm"
+      }
+    },
+    "screen.mainForm": {
+      "type": "Window",
+      "locator": {
+        "automationId": "MainForm"
+      }
+    },
+    "screen.processForm": {
+      "type": "Window",
+      "locator": {
+        "automationId": "ProcessForm"
+      }
+    },
+    "screen.prescriptionDialog": {
+      "type": "Window",
+      "locator": {
+        "automationId": "PrescriptionDialog"
+      }
+    }
+  },
+  "elements": {
+    "lockForm.emailField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxEmailField"
+      }
+    },
+    "lockForm.passwordField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxPasswordField"
+      }
+    },
+    "lockForm.loginButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxLoginButton"
+      }
+    },
+    "lockForm.errorText": {
+      "type": "Element",
+      "locator": {
+        "automationId": "uxLoginError"
+      }
+    },
+    "mainForm.addButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxAddButton"
+      }
+    },
+    "mainForm.editButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxEditButton"
+      }
+    },
+    "mainForm.removeButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxRemoveButton"
+      }
+    },
+    "mainForm.refreshButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxRefreshButton"
+      }
+    },
+    "mainForm.lockButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxLockButton"
+      }
+    },
+    "mainForm.prescriptionGrid": {
+      "type": "Grid",
+      "locator": {
+        "automationId": "uxPrescriptionGrid"
+      }
+    },
+    "mainForm.checklistButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxChecklistButton"
+      }
+    },
+    "mainForm.processButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxProcessButton"
+      }
+    },
+    "mainForm.successToast": {
+      "type": "Element",
+      "locator": {
+        "automationId": "uxSuccessToast"
+      }
+    },
+    "mainForm.successToastMessage": {
+      "type": "Element",
+      "locator": {
+        "automationId": "uxSuccessToastMessage"
+      }
+    },
+    "mainForm.editInfoDialog": {
+      "type": "Element",
+      "locator": {
+        "name": "Edit Prescription"
+      }
+    },
+    "mainForm.editInfoOkButton": {
+      "type": "Button",
+      "locator": {
+        "name": "OK"
+      }
+    },
+    "mainForm.removeInfoDialog": {
+      "type": "Element",
+      "locator": {
+        "name": "Remove Prescription"
+      }
+    },
+    "mainForm.removeInfoOkButton": {
+      "type": "Button",
+      "locator": {
+        "name": "OK"
+      }
+    },
+    "mainForm.removeConfirmDialog": {
+      "type": "Element",
+      "locator": {
+        "name": "Confirm Remove"
+      }
+    },
+    "mainForm.removeConfirmYesButton": {
+      "type": "Button",
+      "locator": {
+        "name": "Yes"
+      }
+    },
+    "mainForm.removeConfirmNoButton": {
+      "type": "Button",
+      "locator": {
+        "name": "No"
+      }
+    },
+    "mainForm.nothingToProcessDialog": {
+      "type": "Element",
+      "locator": {
+        "name": "Nothing To Process"
+      }
+    },
+    "mainForm.nothingToProcessOkButton": {
+      "type": "Button",
+      "locator": {
+        "name": "OK"
+      }
+    },
+    "processForm.processGrid": {
+      "type": "Grid",
+      "locator": {
+        "automationId": "uxProcessGrid"
+      }
+    },
+    "processForm.continueButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxContinueButton"
+      }
+    },
+    "prescriptionDialog.rxNumberField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxRxNumberField"
+      }
+    },
+    "prescriptionDialog.patientNameField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxPatientNameField"
+      }
+    },
+    "prescriptionDialog.drugNameField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxDrugNameField"
+      }
+    },
+    "prescriptionDialog.quantityField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxQuantityField"
+      }
+    },
+    "prescriptionDialog.prescriberField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxPrescriberField"
+      }
+    },
+    "prescriptionDialog.dateWrittenField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxDateWrittenField"
+      }
+    },
+    "prescriptionDialog.validationError": {
+      "type": "Element",
+      "locator": {
+        "automationId": "uxValidationError"
+      }
+    },
+    "prescriptionDialog.saveButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxSaveButton"
+      }
+    },
+    "prescriptionDialog.cancelButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxCancelButton"
+      }
+    }
+  }
+}

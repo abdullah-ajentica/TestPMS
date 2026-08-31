@@ -1,0 +1,10 @@
+<Window x:Class="TestPms.ProcessWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Process Prescriptions"
+        AutomationProperties.AutomationId="ProcessForm"
+        Width="800" Height="550"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="CanResize">
+    <Grid x:Name="Host"/>
+</Window>

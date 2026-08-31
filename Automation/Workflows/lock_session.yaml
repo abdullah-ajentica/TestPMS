@@ -1,0 +1,18 @@
+workflow: lock_session
+
+steps:
+  - assert: screen.mainForm
+
+  - click: mainForm.lockButton
+
+  - wait_for_disappear:
+      target: screen.mainForm
+      timeout_ms: 5000
+      on_timeout:
+        action: fail
+
+  - wait_for_element:
+      target: screen.lockForm
+      timeout_ms: 5000
+      on_timeout:
+        action: fail

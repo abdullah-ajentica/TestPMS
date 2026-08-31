@@ -1,0 +1,42 @@
+workflow: edit_prescription
+
+steps:
+  - assert: screen.mainForm
+
+  - scan_table:
+      target: mainForm.prescriptionGrid
+      search_column: Rx Number
+      match: vars.rxNumber
+      scroll_strategy: page_down_until_found
+      on_found:
+        - click: vars.targetRow
+      on_not_found: fail
+
+  - click: mainForm.editButton
+
+  - wait_for_element:
+      target: screen.prescriptionDialog
+      timeout_ms: 5000
+      on_timeout:
+        action: fail
+
+  - focus: prescriptionDialog.quantityField
+  - wait: 200
+  - clear: prescriptionDialog.quantityField
+  - write:
+      target: prescriptionDialog.quantityField
+      value: vars.quantity
+
+  - click: prescriptionDialog.saveButton
+
+  - wait_for_disappear:
+      target: screen.prescriptionDialog
+      timeout_ms: 5000
+      on_timeout:
+        action: fail
+
+  - wait_for_element:
+      target: mainForm.successToast
+      timeout_ms: 5000
+      on_timeout:
+        action: fail

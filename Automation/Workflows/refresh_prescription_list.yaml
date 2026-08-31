@@ -1,0 +1,10 @@
+workflow: refresh_prescription_list
+
+steps:
+  - assert: screen.mainForm
+
+  - click: mainForm.refreshButton
+
+  - wait: 300
+
+  - assert: mainForm.prescriptionGrid

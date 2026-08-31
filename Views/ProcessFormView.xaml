@@ -1,0 +1,80 @@
+<UserControl x:Class="TestPms.Views.ProcessFormView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F3F4F6">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Process Prescriptions" FontSize="22" FontWeight="Bold" Margin="0,0,0,12"/>
+
+        <DataGrid x:Name="ProcessGrid" Grid.Row="1"
+                  AutomationProperties.AutomationId="uxProcessGrid"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  IsReadOnly="True"
+                  GridLinesVisibility="Horizontal"
+                  RowHeaderWidth="0"
+                  Background="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Rx Number" Binding="{Binding RxNumber}" Width="90">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Rx Number"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Patient Name" Binding="{Binding PatientName}" Width="160">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Patient Name"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Drug Name" Binding="{Binding DrugName}" Width="180">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Drug Name"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="80">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Quantity"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Prescriber" Binding="{Binding Prescriber}" Width="160">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Prescriber"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Date Written" Binding="{Binding DateWritten, StringFormat=MM/dd/yyyy}" Width="110">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Date Written"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="ContinueButton" Grid.Row="2"
+                AutomationProperties.AutomationId="uxContinueButton"
+                Content="Continue" Width="120" Height="34" Margin="0,12,0,0"
+                HorizontalAlignment="Right" Background="#16A34A" Foreground="White"
+                BorderThickness="0" Click="ContinueButton_Click"/>
+    </Grid>
+</UserControl>

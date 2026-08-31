@@ -1,0 +1,123 @@
+<UserControl x:Class="TestPms.Views.MainFormView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#F3F4F6">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="0">
+                <TextBlock Text="Prescriptions" FontSize="22" FontWeight="Bold"
+                           VerticalAlignment="Center" Margin="0,0,24,0"/>
+                <Button x:Name="AddButton" AutomationProperties.AutomationId="uxAddButton"
+                        Content="Add" Width="80" Height="30" Margin="0,0,8,0" Click="AddButton_Click"/>
+                <Button x:Name="EditButton" AutomationProperties.AutomationId="uxEditButton"
+                        Content="Edit" Width="80" Height="30" Margin="0,0,8,0" Click="EditButton_Click"/>
+                <Button x:Name="RemoveButton" AutomationProperties.AutomationId="uxRemoveButton"
+                        Content="Remove" Width="80" Height="30" Margin="0,0,8,0" Click="RemoveButton_Click"/>
+                <Button x:Name="RefreshButton" AutomationProperties.AutomationId="uxRefreshButton"
+                        Content="Refresh" Width="80" Height="30" Click="RefreshButton_Click"/>
+            </StackPanel>
+
+            <Button x:Name="LockButton" AutomationProperties.AutomationId="uxLockButton"
+                    Grid.Column="1" Content="Lock" Width="80" Height="30" VerticalAlignment="Center"
+                    Click="LockButton_Click"/>
+        </Grid>
+
+        <DataGrid x:Name="PrescriptionGrid" Grid.Row="1"
+                  AutomationProperties.AutomationId="uxPrescriptionGrid"
+                  ItemsSource="{Binding}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  IsReadOnly="False"
+                  GridLinesVisibility="Horizontal"
+                  RowHeaderWidth="0"
+                  Background="White">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Binding="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}" Width="40">
+                    <DataGridCheckBoxColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value=""/>
+                        </Style>
+                    </DataGridCheckBoxColumn.CellStyle>
+                </DataGridCheckBoxColumn>
+
+                <DataGridTextColumn Header="Rx Number" Binding="{Binding RxNumber}" IsReadOnly="True" Width="90">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Rx Number"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Patient Name" Binding="{Binding PatientName}" IsReadOnly="True" Width="160">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Patient Name"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Drug Name" Binding="{Binding DrugName}" IsReadOnly="True" Width="180">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Drug Name"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" IsReadOnly="True" Width="80">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Quantity"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Prescriber" Binding="{Binding Prescriber}" IsReadOnly="True" Width="160">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Prescriber"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Date Written" Binding="{Binding DateWritten, StringFormat=MM/dd/yyyy}" IsReadOnly="True" Width="110">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Date Written"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" IsReadOnly="True" Width="100">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="AutomationProperties.Name" Value="Status"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,12,0,0">
+            <Button x:Name="ChecklistButton" AutomationProperties.AutomationId="uxChecklistButton"
+                    Content="Checklist" Width="100" Height="32" Margin="0,0,8,0" Click="ChecklistButton_Click"/>
+            <Button x:Name="ProcessButton" AutomationProperties.AutomationId="uxProcessButton"
+                    Content="Process" Width="100" Height="32" Background="#2563EB" Foreground="White"
+                    BorderThickness="0" Click="ProcessButton_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

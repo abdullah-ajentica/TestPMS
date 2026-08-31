@@ -1,0 +1,33 @@
+workflow: process_all_prescriptions
+
+steps:
+  - assert: screen.mainForm
+
+  - click: mainForm.checklistButton
+
+  - click: mainForm.processButton
+
+  - detect_screen:
+      timeout_ms: 5000
+      candidates:
+        - target: screen.processForm
+          steps:
+            - click: processForm.continueButton
+            - wait_for_disappear:
+                target: screen.processForm
+                timeout_ms: 5000
+                on_timeout:
+                  action: fail
+            - wait_for_element:
+                target: mainForm.successToast
+                timeout_ms: 5000
+                on_timeout:
+                  action: fail
+        - target: mainForm.nothingToProcessDialog
+          steps:
+            - click_by_name:
+                target: mainForm.nothingToProcessOkButton
+            - fail:
+                message: "No prescriptions were available to process"
+      on_timeout:
+        action: fail

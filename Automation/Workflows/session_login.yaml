@@ -1,0 +1,40 @@
+workflow: session_login
+
+steps:
+  - wait: 1000
+
+  - assert: screen.lockForm
+
+  - focus: lockForm.emailField
+  - wait: 200
+  - clear: lockForm.emailField
+  - write:
+      target: lockForm.emailField
+      value: vars.username
+
+  - focus: lockForm.passwordField
+  - wait: 200
+  - clear: lockForm.passwordField
+  - write:
+      target: lockForm.passwordField
+      value: vars.password
+
+  - click:
+      target: lockForm.loginButton
+      mouse_click: true
+
+  - wait_for_element:
+      target: lockForm.errorText
+      timeout_ms: 3000
+      then:
+        - read:
+            target: lockForm.errorText
+            into: vars.loginFailureReason
+        - fail:
+            message: vars.loginFailureReason
+
+  - wait_for_disappear:
+      target: screen.lockForm
+      timeout_ms: 6000
+      on_timeout:
+        action: fail

@@ -1,0 +1,64 @@
+workflow: add_prescription
+
+steps:
+  - assert: screen.mainForm
+
+  - click: mainForm.addButton
+
+  - wait_for_element:
+      target: screen.prescriptionDialog
+      timeout_ms: 5000
+      on_timeout:
+        action: fail
+
+  - focus: prescriptionDialog.patientNameField
+  - wait: 200
+  - clear: prescriptionDialog.patientNameField
+  - write:
+      target: prescriptionDialog.patientNameField
+      value: vars.patientName
+
+  - focus: prescriptionDialog.drugNameField
+  - wait: 200
+  - clear: prescriptionDialog.drugNameField
+  - write:
+      target: prescriptionDialog.drugNameField
+      value: vars.drugName
+
+  - focus: prescriptionDialog.quantityField
+  - wait: 200
+  - clear: prescriptionDialog.quantityField
+  - write:
+      target: prescriptionDialog.quantityField
+      value: vars.quantity
+
+  - focus: prescriptionDialog.prescriberField
+  - wait: 200
+  - clear: prescriptionDialog.prescriberField
+  - write:
+      target: prescriptionDialog.prescriberField
+      value: vars.prescriber
+
+  - click: prescriptionDialog.saveButton
+
+  - wait_for_element:
+      target: prescriptionDialog.validationError
+      timeout_ms: 1500
+      then:
+        - read:
+            target: prescriptionDialog.validationError
+            into: vars.validationFailureReason
+        - fail:
+            message: vars.validationFailureReason
+
+  - wait_for_disappear:
+      target: screen.prescriptionDialog
+      timeout_ms: 5000
+      on_timeout:
+        action: fail
+
+  - wait_for_element:
+      target: mainForm.successToast
+      timeout_ms: 5000
+      on_timeout:
+        action: fail
