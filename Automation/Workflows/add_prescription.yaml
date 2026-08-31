@@ -6,7 +6,7 @@ steps:
   - click: mainForm.addButton
 
   - wait_for_element:
-      target: screen.prescriptionDialog
+      target: prescriptionDialog.saveButton
       timeout_ms: 5000
       on_timeout:
         action: fail
@@ -52,7 +52,7 @@ steps:
             message: vars.validationFailureReason
 
   - wait_for_disappear:
-      target: screen.prescriptionDialog
+      target: prescriptionDialog.saveButton
       timeout_ms: 5000
       on_timeout:
         action: fail

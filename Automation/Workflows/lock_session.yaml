@@ -12,7 +12,7 @@ steps:
         action: fail
 
   - wait_for_element:
-      target: screen.lockForm
+      target: lockForm.loginButton
       timeout_ms: 5000
       on_timeout:
         action: fail

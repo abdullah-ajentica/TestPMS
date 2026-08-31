@@ -15,7 +15,7 @@ steps:
   - click: mainForm.processButton
 
   - wait_for_element:
-      target: screen.processForm
+      target: processForm.continueButton
       timeout_ms: 5000
       on_timeout:
         action: fail
@@ -31,7 +31,7 @@ steps:
   - click: processForm.continueButton
 
   - wait_for_disappear:
-      target: screen.processForm
+      target: processForm.continueButton
       timeout_ms: 5000
       on_timeout:
         action: fail
