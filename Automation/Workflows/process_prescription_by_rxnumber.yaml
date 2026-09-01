@@ -36,14 +36,8 @@ steps:
       on_timeout:
         action: fail
 
-  - wait_for_element:
-      target: mainForm.successToast
-      timeout_ms: 5000
-      on_timeout:
-        action: fail
-
-  - read:
+  - read_area:
       target: mainForm.successToastMessage
       into: vars.toastMessage
-
-  - log: vars.toastMessage
+      timeout_ms: 5000
+      success_pattern: '^Successfully processed'

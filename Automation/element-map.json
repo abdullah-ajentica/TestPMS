@@ -116,12 +116,6 @@
         "automationId": "uxProcessButton"
       }
     },
-    "mainForm.successToast": {
-      "type": "Element",
-      "locator": {
-        "automationId": "uxSuccessToast"
-      }
-    },
     "mainForm.successToastMessage": {
       "type": "Element",
       "locator": {

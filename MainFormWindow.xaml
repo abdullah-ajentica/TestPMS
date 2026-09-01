@@ -11,11 +11,10 @@
                              LockRequested="MainForm_LockRequested"
                              ProcessRequested="MainForm_ProcessRequested"/>
 
-        <Border x:Name="ToastBorder"
-                AutomationProperties.AutomationId="uxSuccessToast"
-                Background="#16A34A" CornerRadius="4" Padding="16,10"
+        <Border x:Name="ToastHost"
                 HorizontalAlignment="Right" VerticalAlignment="Top"
-                Margin="0,20,20,0" Visibility="Collapsed">
+                Margin="0,20,20,0" Visibility="Collapsed"
+                Background="#16A34A" CornerRadius="4" Padding="16,10">
             <TextBlock x:Name="ToastText"
                        AutomationProperties.AutomationId="uxSuccessToastMessage"
                        Foreground="White" FontSize="13" FontWeight="SemiBold"/>

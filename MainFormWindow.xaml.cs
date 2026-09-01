@@ -15,10 +15,10 @@ public partial class MainFormWindow : Window
     {
         InitializeComponent();
 
-        _toastTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(3) };
+        _toastTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(10) };
         _toastTimer.Tick += (_, _) =>
         {
-            ToastBorder.Visibility = Visibility.Collapsed;
+            ToastHost.Visibility = Visibility.Collapsed;
             _toastTimer.Stop();
         };
 
@@ -39,7 +39,7 @@ public partial class MainFormWindow : Window
     private void ShowToast(string message)
     {
         ToastText.Text = message;
-        ToastBorder.Visibility = Visibility.Visible;
+        ToastHost.Visibility = Visibility.Visible;
         _toastTimer.Stop();
         _toastTimer.Start();
     }
