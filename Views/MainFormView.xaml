@@ -53,7 +53,8 @@
                   GridLinesVisibility="Horizontal"
                   HeadersVisibility="Column"
                   RowHeaderWidth="0"
-                  Background="White">
+                  Background="White"
+                  PreviewMouseLeftButtonDown="PrescriptionGrid_PreviewMouseLeftButtonDown">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Binding="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}" Width="40">
                     <DataGridCheckBoxColumn.CellStyle>

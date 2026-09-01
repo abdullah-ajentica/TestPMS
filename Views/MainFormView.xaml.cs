@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
 using TestPms.Models;
 using TestPms.Services;
 using TestPms;
@@ -113,5 +115,30 @@ public partial class MainFormView : UserControl
     {
         var window = new LumistryWebBrowserWindow { Owner = Window.GetWindow(this) };
         window.Show();
+    }
+
+    private void PrescriptionGrid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        var cell = FindAncestor<DataGridCell>(e.OriginalSource as DependencyObject);
+        if (cell?.DataContext is not Prescription prescription) return;
+
+        prescription.IsChecked = !prescription.IsChecked;
+
+        if (cell.Column is DataGridCheckBoxColumn)
+        {
+            // We just toggled it manually — stop the click from also reaching the native
+            // CheckBox, which would otherwise toggle it a second time (net no-op).
+            e.Handled = true;
+        }
+    }
+
+    private static T? FindAncestor<T>(DependencyObject? current) where T : DependencyObject
+    {
+        while (current is not null)
+        {
+            if (current is T match) return match;
+            current = VisualTreeHelper.GetParent(current);
+        }
+        return null;
     }
 }

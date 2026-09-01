@@ -12,7 +12,7 @@ steps:
         - click: vars.targetRow
       on_not_found: fail
 
-  - click: mainForm.processButton
+  - invoke: mainForm.processButton
 
   - wait_for_element:
       target: processForm.continueButton

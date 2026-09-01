@@ -24,6 +24,16 @@ public partial class MainFormWindow : Window
 
         ToastService.Requested += ShowToast;
         Closed += (_, _) => ToastService.Requested -= ShowToast;
+
+        // Automation tooling can call ShowWindow(SW_RESTORE) to bring this window to the
+        // foreground, which un-maximizes an already-maximized window as a side effect —
+        // snap straight back so the layout (and every control's on-screen position) stays
+        // consistent with what a workflow expects.
+        StateChanged += (_, _) =>
+        {
+            if (WindowState != WindowState.Maximized)
+                WindowState = WindowState.Maximized;
+        };
     }
 
     private void ShowToast(string message)
