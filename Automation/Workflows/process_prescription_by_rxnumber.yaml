@@ -30,12 +30,6 @@ steps:
 
   - click: processForm.continueButton
 
-  - wait_for_disappear:
-      target: processForm.continueButton
-      timeout_ms: 5000
-      on_timeout:
-        action: fail
-
   - read_area:
       target: mainForm.successToastMessage
       into: vars.toastMessage
