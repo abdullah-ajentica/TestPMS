@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using TestPms.Models;
 using TestPms.Services;
+using TestPms;
 
 namespace TestPms.Views;
 
@@ -100,5 +101,17 @@ public partial class MainFormView : UserControl
     private void LockButton_Click(object sender, RoutedEventArgs e)
     {
         LockRequested?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void LumistryWebpageButton_Click(object sender, RoutedEventArgs e)
+    {
+        var window = new LumistryWebpageWindow { Owner = Window.GetWindow(this) };
+        window.Show();
+    }
+
+    private void LumistryWebBrowserButton_Click(object sender, RoutedEventArgs e)
+    {
+        var window = new LumistryWebBrowserWindow { Owner = Window.GetWindow(this) };
+        window.Show();
     }
 }

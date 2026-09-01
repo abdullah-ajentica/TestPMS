@@ -9,7 +9,7 @@ steps:
       match: vars.rxNumber
       scroll_strategy: page_down_until_found
       on_found:
-        - select_row: vars.targetRow
+        - click: vars.targetRow
       on_not_found: fail
 
   - click: mainForm.processButton

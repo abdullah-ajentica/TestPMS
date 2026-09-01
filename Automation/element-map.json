@@ -23,6 +23,12 @@
       "locator": {
         "automationId": "PrescriptionDialog"
       }
+    },
+    "screen.lumistryWebpage": {
+      "type": "Window",
+      "locator": {
+        "automationId": "LumistryWebpage"
+      }
     }
   },
   "elements": {
@@ -78,6 +84,18 @@
       "type": "Button",
       "locator": {
         "automationId": "uxLockButton"
+      }
+    },
+    "mainForm.lumistryWebpageButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxLumistryWebpageButton"
+      }
+    },
+    "lumistryWebpage.browser": {
+      "type": "Element",
+      "locator": {
+        "automationId": "uxLumistryBrowser"
       }
     },
     "mainForm.prescriptionGrid": {
