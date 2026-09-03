@@ -1,0 +1,867 @@
+{
+  "screens": {
+    "screen.lockForm": {
+      "type": "Window",
+      "locator": {
+        "automationId": "LockForm"
+      },
+      "fingerprint": {
+        "className": "LockWindow",
+        "title": "TestPms",
+        "titleIsAmbiguous": true,
+        "childIds": [
+          "uxEmailField",
+          "uxPasswordField",
+          "uxLoginError",
+          "uxLoginButton"
+        ],
+        "declaredIn": "LockWindow.xaml"
+      }
+    },
+    "screen.mainForm": {
+      "type": "Window",
+      "locator": {
+        "automationId": "MainForm"
+      },
+      "fingerprint": {
+        "className": "MainFormWindow",
+        "title": "TestPms",
+        "titleIsAmbiguous": true,
+        "childIds": [
+          "uxAddButton",
+          "uxEditButton",
+          "uxRemoveButton",
+          "uxRefreshButton",
+          "uxLumistryWebpageButton",
+          "uxLumistryWebBrowserButton",
+          "uxLockButton",
+          "uxPrescriptionGrid",
+          "uxChecklistButton",
+          "uxProcessButton",
+          "uxSuccessToastMessage"
+        ],
+        "declaredIn": "MainFormWindow.xaml"
+      }
+    },
+    "screen.processForm": {
+      "type": "Window",
+      "locator": {
+        "automationId": "ProcessForm"
+      },
+      "fingerprint": {
+        "className": "ProcessWindow",
+        "title": "Process Prescriptions",
+        "childIds": [
+          "uxProcessGrid",
+          "uxContinueButton"
+        ],
+        "declaredIn": "ProcessWindow.xaml"
+      }
+    },
+    "screen.prescriptionDialog": {
+      "type": "Window",
+      "locator": {
+        "automationId": "PrescriptionDialog"
+      },
+      "fingerprint": {
+        "className": "PrescriptionDialog",
+        "title": "Prescription",
+        "childIds": [
+          "uxRxNumberField",
+          "uxPatientNameField",
+          "uxDrugNameField",
+          "uxQuantityField",
+          "uxPrescriberField",
+          "uxDateWrittenField",
+          "uxValidationError",
+          "uxCancelButton",
+          "uxSaveButton"
+        ],
+        "declaredIn": "Views/PrescriptionDialog.xaml"
+      }
+    },
+    "screen.lumistryWebpage": {
+      "type": "Window",
+      "locator": {
+        "automationId": "LumistryWebpage"
+      },
+      "fingerprint": {
+        "className": "LumistryWebpageWindow",
+        "title": "Lumistry",
+        "titleIsAmbiguous": true,
+        "childIds": [
+          "uxLumistryBrowser"
+        ],
+        "declaredIn": "LumistryWebpageWindow.xaml"
+      }
+    },
+    "screen.lumistryWebBrowser": {
+      "type": "Window",
+      "locator": {
+        "automationId": "LumistryWebBrowser"
+      },
+      "fingerprint": {
+        "className": "LumistryWebBrowserWindow",
+        "title": "Lumistry",
+        "titleIsAmbiguous": true,
+        "childIds": [
+          "uxLumistryWebBrowser"
+        ],
+        "declaredIn": "LumistryWebBrowserWindow.xaml"
+      }
+    }
+  },
+  "elements": {
+    "lockForm.emailField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxEmailField"
+      },
+      "fingerprint": {
+        "className": "TextBox",
+        "ancestorIds": [
+          "LockForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "LockScreenView",
+          "Grid",
+          "Border",
+          "StackPanel"
+        ],
+        "siblingIndex": 3,
+        "siblingCount": 8,
+        "labelNearby": "Email",
+        "declaredIn": "Views/LockScreenView.xaml"
+      }
+    },
+    "lockForm.passwordField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxPasswordField"
+      },
+      "fingerprint": {
+        "className": "PasswordBox",
+        "ancestorIds": [
+          "LockForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "LockScreenView",
+          "Grid",
+          "Border",
+          "StackPanel"
+        ],
+        "siblingIndex": 5,
+        "siblingCount": 8,
+        "labelNearby": "Password",
+        "declaredIn": "Views/LockScreenView.xaml"
+      }
+    },
+    "lockForm.errorText": {
+      "type": "Element",
+      "locator": {
+        "automationId": "uxLoginError"
+      },
+      "fingerprint": {
+        "className": "TextBlock",
+        "name": "Invalid email or password.",
+        "initiallyCollapsed": true,
+        "ancestorIds": [
+          "LockForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "LockScreenView",
+          "Grid",
+          "Border",
+          "StackPanel"
+        ],
+        "siblingIndex": 6,
+        "siblingCount": 8,
+        "declaredIn": "Views/LockScreenView.xaml"
+      }
+    },
+    "lockForm.loginButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxLoginButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Log In",
+        "ancestorIds": [
+          "LockForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "LockScreenView",
+          "Grid",
+          "Border",
+          "StackPanel"
+        ],
+        "siblingIndex": 7,
+        "siblingCount": 8,
+        "declaredIn": "Views/LockScreenView.xaml"
+      }
+    },
+    "mainForm.addButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxAddButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Add",
+        "ancestorIds": [
+          "MainForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "MainFormView",
+          "Grid",
+          "Grid",
+          "StackPanel"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 5,
+        "declaredIn": "Views/MainFormView.xaml"
+      }
+    },
+    "mainForm.editButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxEditButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Edit",
+        "ancestorIds": [
+          "MainForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "MainFormView",
+          "Grid",
+          "Grid",
+          "StackPanel"
+        ],
+        "siblingIndex": 2,
+        "siblingCount": 5,
+        "declaredIn": "Views/MainFormView.xaml"
+      }
+    },
+    "mainForm.removeButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxRemoveButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Remove",
+        "ancestorIds": [
+          "MainForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "MainFormView",
+          "Grid",
+          "Grid",
+          "StackPanel"
+        ],
+        "siblingIndex": 3,
+        "siblingCount": 5,
+        "declaredIn": "Views/MainFormView.xaml"
+      }
+    },
+    "mainForm.refreshButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxRefreshButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Refresh",
+        "ancestorIds": [
+          "MainForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "MainFormView",
+          "Grid",
+          "Grid",
+          "StackPanel"
+        ],
+        "siblingIndex": 4,
+        "siblingCount": 5,
+        "declaredIn": "Views/MainFormView.xaml"
+      }
+    },
+    "mainForm.lumistryWebpageButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxLumistryWebpageButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Lumistry Webpage",
+        "ancestorIds": [
+          "MainForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "MainFormView",
+          "Grid",
+          "Grid",
+          "StackPanel"
+        ],
+        "siblingIndex": 0,
+        "siblingCount": 3,
+        "declaredIn": "Views/MainFormView.xaml"
+      }
+    },
+    "mainForm.lumistryWebBrowserButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxLumistryWebBrowserButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Lumistry WebBrowser",
+        "ancestorIds": [
+          "MainForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "MainFormView",
+          "Grid",
+          "Grid",
+          "StackPanel"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 3,
+        "declaredIn": "Views/MainFormView.xaml"
+      }
+    },
+    "mainForm.lockButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxLockButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Lock",
+        "ancestorIds": [
+          "MainForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "MainFormView",
+          "Grid",
+          "Grid",
+          "StackPanel"
+        ],
+        "siblingIndex": 2,
+        "siblingCount": 3,
+        "declaredIn": "Views/MainFormView.xaml"
+      }
+    },
+    "mainForm.prescriptionGrid": {
+      "type": "Grid",
+      "locator": {
+        "automationId": "uxPrescriptionGrid"
+      },
+      "fingerprint": {
+        "className": "DataGrid",
+        "ancestorIds": [
+          "MainForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "MainFormView",
+          "Grid"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 3,
+        "columnCount": 8,
+        "columnHeaders": [
+          "",
+          "Rx Number",
+          "Patient Name",
+          "Drug Name",
+          "Quantity",
+          "Prescriber",
+          "Date Written",
+          "Status"
+        ],
+        "hasCheckBoxColumn": true,
+        "checkBoxColumnIndex": 0,
+        "declaredIn": "Views/MainFormView.xaml"
+      }
+    },
+    "mainForm.checklistButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxChecklistButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Checklist",
+        "ancestorIds": [
+          "MainForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "MainFormView",
+          "Grid",
+          "StackPanel"
+        ],
+        "siblingIndex": 0,
+        "siblingCount": 2,
+        "declaredIn": "Views/MainFormView.xaml"
+      }
+    },
+    "mainForm.processButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxProcessButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Process",
+        "ancestorIds": [
+          "MainForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "MainFormView",
+          "Grid",
+          "StackPanel"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 2,
+        "declaredIn": "Views/MainFormView.xaml"
+      }
+    },
+    "mainForm.successToastMessage": {
+      "type": "Element",
+      "locator": {
+        "automationId": "uxSuccessToastMessage"
+      },
+      "fingerprint": {
+        "className": "TextBlock",
+        "ancestorIds": [
+          "MainForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "Grid",
+          "Border"
+        ],
+        "siblingIndex": 0,
+        "siblingCount": 1,
+        "initiallyCollapsed": true,
+        "parentHasNoAutomationPeer": true,
+        "declaredIn": "MainFormWindow.xaml"
+      }
+    },
+    "mainForm.editInfoDialog": {
+      "type": "Element",
+      "locator": {
+        "name": "Edit Prescription"
+      },
+      "fingerprint": {
+        "className": "#32770",
+        "origin": "MessageBox",
+        "buttons": [
+          "OK"
+        ],
+        "declaredIn": "Views/MainFormView.xaml.cs"
+      }
+    },
+    "mainForm.editInfoOkButton": {
+      "type": "Button",
+      "locator": {
+        "name": "OK"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "OK",
+        "origin": "MessageBox",
+        "nameIsAmbiguous": true,
+        "declaredIn": "Views/MainFormView.xaml.cs"
+      }
+    },
+    "mainForm.removeInfoDialog": {
+      "type": "Element",
+      "locator": {
+        "name": "Remove Prescription"
+      },
+      "fingerprint": {
+        "className": "#32770",
+        "origin": "MessageBox",
+        "buttons": [
+          "OK"
+        ],
+        "declaredIn": "Views/MainFormView.xaml.cs"
+      }
+    },
+    "mainForm.removeInfoOkButton": {
+      "type": "Button",
+      "locator": {
+        "name": "OK"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "OK",
+        "origin": "MessageBox",
+        "nameIsAmbiguous": true,
+        "declaredIn": "Views/MainFormView.xaml.cs"
+      }
+    },
+    "mainForm.removeConfirmDialog": {
+      "type": "Element",
+      "locator": {
+        "name": "Confirm Remove"
+      },
+      "fingerprint": {
+        "className": "#32770",
+        "origin": "MessageBox",
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "declaredIn": "Views/MainFormView.xaml.cs"
+      }
+    },
+    "mainForm.removeConfirmYesButton": {
+      "type": "Button",
+      "locator": {
+        "name": "Yes"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Yes",
+        "origin": "MessageBox",
+        "declaredIn": "Views/MainFormView.xaml.cs"
+      }
+    },
+    "mainForm.removeConfirmNoButton": {
+      "type": "Button",
+      "locator": {
+        "name": "No"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "No",
+        "origin": "MessageBox",
+        "declaredIn": "Views/MainFormView.xaml.cs"
+      }
+    },
+    "mainForm.nothingToProcessDialog": {
+      "type": "Element",
+      "locator": {
+        "name": "Nothing To Process"
+      },
+      "fingerprint": {
+        "className": "#32770",
+        "origin": "MessageBox",
+        "buttons": [
+          "OK"
+        ],
+        "declaredIn": "Views/MainFormView.xaml.cs"
+      }
+    },
+    "mainForm.nothingToProcessOkButton": {
+      "type": "Button",
+      "locator": {
+        "name": "OK"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "OK",
+        "origin": "MessageBox",
+        "nameIsAmbiguous": true,
+        "declaredIn": "Views/MainFormView.xaml.cs"
+      }
+    },
+    "processForm.processGrid": {
+      "type": "Grid",
+      "locator": {
+        "automationId": "uxProcessGrid"
+      },
+      "fingerprint": {
+        "className": "DataGrid",
+        "ancestorIds": [
+          "ProcessForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "Grid",
+          "ProcessFormView",
+          "Grid"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 3,
+        "columnCount": 6,
+        "columnHeaders": [
+          "Rx Number",
+          "Patient Name",
+          "Drug Name",
+          "Quantity",
+          "Prescriber",
+          "Date Written"
+        ],
+        "hasCheckBoxColumn": false,
+        "declaredIn": "Views/ProcessFormView.xaml"
+      }
+    },
+    "processForm.continueButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxContinueButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Continue",
+        "ancestorIds": [
+          "ProcessForm"
+        ],
+        "xamlPath": [
+          "Window",
+          "Grid",
+          "ProcessFormView",
+          "Grid"
+        ],
+        "siblingIndex": 2,
+        "siblingCount": 3,
+        "declaredIn": "Views/ProcessFormView.xaml"
+      }
+    },
+    "prescriptionDialog.rxNumberField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxRxNumberField"
+      },
+      "fingerprint": {
+        "className": "TextBox",
+        "ancestorIds": [
+          "PrescriptionDialog"
+        ],
+        "xamlPath": [
+          "Window",
+          "StackPanel"
+        ],
+        "siblingIndex": 2,
+        "siblingCount": 15,
+        "labelNearby": "Rx Number",
+        "declaredIn": "Views/PrescriptionDialog.xaml"
+      }
+    },
+    "prescriptionDialog.patientNameField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxPatientNameField"
+      },
+      "fingerprint": {
+        "className": "TextBox",
+        "ancestorIds": [
+          "PrescriptionDialog"
+        ],
+        "xamlPath": [
+          "Window",
+          "StackPanel"
+        ],
+        "siblingIndex": 4,
+        "siblingCount": 15,
+        "labelNearby": "Patient Name",
+        "declaredIn": "Views/PrescriptionDialog.xaml"
+      }
+    },
+    "prescriptionDialog.drugNameField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxDrugNameField"
+      },
+      "fingerprint": {
+        "className": "TextBox",
+        "ancestorIds": [
+          "PrescriptionDialog"
+        ],
+        "xamlPath": [
+          "Window",
+          "StackPanel"
+        ],
+        "siblingIndex": 6,
+        "siblingCount": 15,
+        "labelNearby": "Drug Name",
+        "declaredIn": "Views/PrescriptionDialog.xaml"
+      }
+    },
+    "prescriptionDialog.quantityField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxQuantityField"
+      },
+      "fingerprint": {
+        "className": "TextBox",
+        "ancestorIds": [
+          "PrescriptionDialog"
+        ],
+        "xamlPath": [
+          "Window",
+          "StackPanel"
+        ],
+        "siblingIndex": 8,
+        "siblingCount": 15,
+        "labelNearby": "Quantity",
+        "declaredIn": "Views/PrescriptionDialog.xaml"
+      }
+    },
+    "prescriptionDialog.prescriberField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxPrescriberField"
+      },
+      "fingerprint": {
+        "className": "TextBox",
+        "ancestorIds": [
+          "PrescriptionDialog"
+        ],
+        "xamlPath": [
+          "Window",
+          "StackPanel"
+        ],
+        "siblingIndex": 10,
+        "siblingCount": 15,
+        "labelNearby": "Prescriber",
+        "declaredIn": "Views/PrescriptionDialog.xaml"
+      }
+    },
+    "prescriptionDialog.dateWrittenField": {
+      "type": "Edit",
+      "locator": {
+        "automationId": "uxDateWrittenField"
+      },
+      "fingerprint": {
+        "className": "DatePicker",
+        "ancestorIds": [
+          "PrescriptionDialog"
+        ],
+        "xamlPath": [
+          "Window",
+          "StackPanel"
+        ],
+        "siblingIndex": 12,
+        "siblingCount": 15,
+        "labelNearby": "Date Written",
+        "declaredIn": "Views/PrescriptionDialog.xaml"
+      }
+    },
+    "prescriptionDialog.validationError": {
+      "type": "Element",
+      "locator": {
+        "automationId": "uxValidationError"
+      },
+      "fingerprint": {
+        "className": "TextBlock",
+        "name": "Rx Number, Patient Name and Drug Name are required.",
+        "initiallyCollapsed": true,
+        "ancestorIds": [
+          "PrescriptionDialog"
+        ],
+        "xamlPath": [
+          "Window",
+          "StackPanel"
+        ],
+        "siblingIndex": 13,
+        "siblingCount": 15,
+        "declaredIn": "Views/PrescriptionDialog.xaml"
+      }
+    },
+    "prescriptionDialog.cancelButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxCancelButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Cancel",
+        "ancestorIds": [
+          "PrescriptionDialog"
+        ],
+        "xamlPath": [
+          "Window",
+          "StackPanel",
+          "StackPanel"
+        ],
+        "siblingIndex": 0,
+        "siblingCount": 2,
+        "declaredIn": "Views/PrescriptionDialog.xaml"
+      }
+    },
+    "prescriptionDialog.saveButton": {
+      "type": "Button",
+      "locator": {
+        "automationId": "uxSaveButton"
+      },
+      "fingerprint": {
+        "className": "Button",
+        "name": "Save",
+        "ancestorIds": [
+          "PrescriptionDialog"
+        ],
+        "xamlPath": [
+          "Window",
+          "StackPanel",
+          "StackPanel"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 2,
+        "declaredIn": "Views/PrescriptionDialog.xaml"
+      }
+    },
+    "lumistryWebpage.browser": {
+      "type": "Element",
+      "locator": {
+        "automationId": "uxLumistryBrowser"
+      },
+      "fingerprint": {
+        "className": "WebView2",
+        "ancestorIds": [
+          "LumistryWebpage"
+        ],
+        "xamlPath": [
+          "Window"
+        ],
+        "siblingIndex": 0,
+        "siblingCount": 1,
+        "hostsHtml": true,
+        "htmlEngine": "WebView2",
+        "source": "https://lumistry.com/solutions/",
+        "declaredIn": "LumistryWebpageWindow.xaml"
+      }
+    },
+    "lumistryWebBrowser.browser": {
+      "type": "Element",
+      "locator": {
+        "automationId": "uxLumistryWebBrowser"
+      },
+      "fingerprint": {
+        "className": "WebBrowser",
+        "ancestorIds": [
+          "LumistryWebBrowser"
+        ],
+        "xamlPath": [
+          "Window"
+        ],
+        "siblingIndex": 0,
+        "siblingCount": 1,
+        "hostsHtml": true,
+        "htmlEngine": "Trident",
+        "source": "https://lumistry.com/solutions/",
+        "declaredIn": "LumistryWebBrowserWindow.xaml"
+      }
+    }
+  }
+}

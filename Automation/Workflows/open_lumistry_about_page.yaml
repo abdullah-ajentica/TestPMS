@@ -1,0 +1,62 @@
+workflow: open_lumistry_about_page
+
+steps:
+  - assert: screen.mainForm
+
+  # Opens the WebView2 window (maximized) on https://lumistry.com/solutions/.
+  - click: mainForm.lumistryWebpageButton
+
+  # The WebView2 host pane exists the moment the window is created...
+  - wait_for_element:
+      target: lumistryWebpage.browser
+      timeout_ms: 10000
+      on_timeout:
+        action: fail
+        message: "The Lumistry webpage window did not open"
+
+  # ...but the page itself is fetched over the internet, and WebView2 only builds its
+  # accessibility tree once we start polling it, so give the site real time to show up.
+  - wait_for_element:
+      target: lumistryWebpage.siteHeader
+      timeout_ms: 45000
+      on_timeout:
+        action: fail
+        message: "lumistry.com did not finish loading in the webview"
+
+  # Let the header finish laying out before we read a link's on-screen position from it.
+  - wait: 1500
+
+  # lumistry.com is responsive: on a wide window the navbar shows About directly, on a
+  # narrow one it collapses behind the hamburger. Race both so either layout works.
+  - detect_screen:
+      timeout_ms: 20000
+      candidates:
+        - target: lumistryWebpage.aboutNavItem
+          steps:
+            - log: "Full navbar is showing — About is directly clickable"
+        - target: lumistryWebpage.menuButton
+          steps:
+            - log: "Navbar is collapsed — opening the menu before clicking About"
+            - click: lumistryWebpage.menuButton
+            - wait_for_element:
+                target: lumistryWebpage.aboutNavItem
+                timeout_ms: 10000
+                on_timeout:
+                  action: fail
+                  message: "About did not appear after opening the collapsed navbar"
+            - wait: 500
+      on_timeout:
+        action: fail
+        message: "Neither the navbar nor its collapsed menu button appeared"
+
+  - click: lumistryWebpage.aboutNavItem
+
+  # About points at /company/ — the Company page's title is the proof we navigated.
+  - wait_for_element:
+      target: lumistryWebpage.companyPage
+      timeout_ms: 30000
+      on_timeout:
+        action: fail
+        message: "Clicking About did not navigate to the Company page"
+
+  - log: "Company page is open"

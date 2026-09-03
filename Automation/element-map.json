@@ -98,6 +98,30 @@
         "automationId": "uxLumistryBrowser"
       }
     },
+    "lumistryWebpage.siteHeader": {
+      "type": "Element",
+      "locator": {
+        "automationId": "header"
+      }
+    },
+    "lumistryWebpage.menuButton": {
+      "type": "Element",
+      "locator": {
+        "automationId": "menu-icon"
+      }
+    },
+    "lumistryWebpage.aboutNavItem": {
+      "type": "Element",
+      "locator": {
+        "automationId": "menu-item-2417"
+      }
+    },
+    "lumistryWebpage.companyPage": {
+      "type": "Element",
+      "locator": {
+        "name": "Company | Lumistry"
+      }
+    },
     "mainForm.prescriptionGrid": {
       "type": "Grid",
       "locator": {

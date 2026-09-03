@@ -5,6 +5,7 @@
         Title="Lumistry"
         AutomationProperties.AutomationId="LumistryWebpage"
         Width="1200" Height="800"
+        WindowState="Maximized"
         WindowStartupLocation="CenterOwner"
         ResizeMode="CanResize">
     <wv2:WebView2 x:Name="Browser"
